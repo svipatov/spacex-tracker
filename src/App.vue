@@ -1,51 +1,54 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Search</router-link>
-    </div>
-    <button @click="askPermission">Login with Spotify</button>
-    <router-view/>
+    <header>
+      <span>Vue.js PWA</span>
+    </header>
+    <main>
+      <img src="./assets/logo.png" alt="Vue.js PWA">
+      <router-view></router-view>
+    </main>
   </div>
 </template>
 
-<script lang="ts">
-  import { Component, Model, Vue } from 'vue-property-decorator';
-  // import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
-
-  @Component({
-    components: {},
-  })
-  export default class App extends Vue {
-    private askPermission() {
-      // console.log(this.$store.state.test);
-    }
-  }
+<script>
+export default {
+  name: 'app'
+}
 </script>
 
 <style>
-
-* {
-  box-sizing: border-box;
+body {
+  margin: 0;
 }
 
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+}
+
+main {
   text-align: center;
-  color: #2c3e50;
+  margin-top: 40px;
 }
 
-#nav {
-  padding: 30px;
+header {
+  margin: 0;
+  height: 56px;
+  padding: 0 16px 0 24px;
+  background-color: #35495E;
+  color: #ffffff;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-active {
-  color: #42b983;
+header span {
+  display: block;
+  position: relative;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: .02em;
+  font-weight: 400;
+  box-sizing: border-box;
+  padding-top: 16px;
 }
 </style>
