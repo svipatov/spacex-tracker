@@ -1,10 +1,12 @@
 <template>
   <div id="app">
     <header>
-      <span>Vue.js PWA</span>
+      <span>SpaceX</span>
     </header>
+    <nav>
+      <router-link to="/launches">Launches</router-link>
+    </nav>
     <main>
-      <img src="./assets/logo.png" alt="Vue.js PWA">
       <router-view></router-view>
     </main>
   </div>
