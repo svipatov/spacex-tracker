@@ -1,9 +1,10 @@
 <template>
   <div>
-    <div class="launch" v-for="launch in allLaunches" :key="launch.flight_number">
+    <div class="launch" v-for="launch in getAllLaunches" :key="launch.flight_number">
       <span>{{launch.flight_number}}.</span>
       <span>{{launch.rocket.rocket_name}}</span>
       <div>{{launch.details}}</div>
+      <router-link :to="goToLaunch(launch)">Read more</router-link>
     </div>
   </div>
 </template>
@@ -13,8 +14,18 @@ import { mapGetters } from 'vuex'
 
 export default {
   name: 'launches',
+  methods: {
+    goToLaunch (launch) {
+      return {
+        name: 'launch',
+        params: {
+          flight: launch.flight_number
+        }
+      }
+    }
+  },
   computed: {
-    ...mapGetters(['allLaunches'])
+    ...mapGetters(['getAllLaunches'])
   },
   beforeMount () {
     this.$store.dispatch('FETCH_LAUNCHES')
