@@ -27,7 +27,7 @@ export default {
   computed: {
     ...mapGetters(['getAllLaunches'])
   },
-  beforeMount () {
+  created () {
     this.$store.dispatch('FETCH_LAUNCHES')
   }
 }
