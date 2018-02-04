@@ -9,12 +9,12 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   name: 'launches',
   computed: {
-    allLaunches () {
-      return this.$store.getters.allLaunches
-    }
+    ...mapGetters(['allLaunches'])
   },
   beforeMount () {
     this.$store.dispatch('FETCH_LAUNCHES')
@@ -22,7 +22,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 .launch {
   margin: 5px;
   padding: 5px;

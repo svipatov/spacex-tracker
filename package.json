@@ -1,5 +1,5 @@
 {
-  "name": "spotify-tracker",
+  "name": "spacex-tracker",
   "version": "1.0.0",
   "description": "A Vue.js project",
   "author": "Sergey Ipatov <sergey.ipatov@blip.pt>",
@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "axios": "0.17.1",
+    "node-sass": "4.7.2",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
     "vuex": "3.0.1"

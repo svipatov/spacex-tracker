@@ -1,4 +1,4 @@
-# spotify-tracker
+# spacex-tracker
 
 > A Vue.js project
 
