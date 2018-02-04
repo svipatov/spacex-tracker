@@ -17,11 +17,19 @@ const actions = {
     return getLaunches().then((response) => {
       commit('SET_LAUNCHES', response.data)
     })
+  },
+  'FETCH_LAUNCH': ({ commit }, flight) => {
+    return getLaunches({ flight }).then((response) => {
+      commit('SET_LAUNCHES', response.data)
+    })
   }
 }
 const getters = {
-  allLaunches (state) {
+  getAllLaunches (state) {
     return state.launches
+  },
+  getLaunch (state) {
+    return (flight) => state.launches.find((launch) => launch.flight_number === flight)
   }
 }
 
