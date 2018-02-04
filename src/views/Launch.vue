@@ -1,6 +1,6 @@
 <template>
   <div>
-    {{getLaunch}}
+    {{getLaunch(flight)}}
   </div>
 </template>
 
