@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="launch" v-for="launch in getAllLaunches" :key="launch.flight_number">
+    <div class="launch" v-for="launch in orderedLaunches" :key="launch.flight_number">
       <span>{{launch.flight_number}}.</span>
       <span>{{launch.rocket.rocket_name}}</span>
       <div>{{launch.details}}</div>
@@ -25,10 +25,15 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['getAllLaunches'])
+    ...mapGetters({ getLaunches: 'launches/getAllLaunches' }),
+    orderedLaunches () {
+      return [...this.getLaunches].sort((a, b) =>
+        b.flight_number - a.flight_number
+      )
+    }
   },
   created () {
-    this.$store.dispatch('FETCH_LAUNCHES')
+    this.$store.dispatch('launches/FETCH_LAUNCHES')
   }
 }
 </script>

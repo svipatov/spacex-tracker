@@ -1,35 +1,33 @@
 <template>
-  <div>
+  <div v-if="launch">
     <div>{{launch.rocket.rocket_name}} launched in {{launch.launch_year}} from {{launch.launch_site.site_name_long}}.</div>
     <div>{{success}}</div>
   </div>
 </template>
 
 <script>
-// import { mapGetters } from 'vuex'
+import { mapActions } from 'vuex'
 
 export default {
   props: ['flight'],
   name: 'launch',
-  data () {
-    return {
-      launch: this.$store.getters.getLaunch(this.flight)
-    }
-  },
   computed: {
     success () {
       return this.launch.launch_success ? 'Successful' : 'Failed'
+    },
+    launch () {
+      return this.$store.getters['launches/getLaunch'](this.flight)
     }
   },
   methods: {
-    fetchLaunch () {
-      const launch = this.$store.getters.getLaunch(this.flight)
-
-      !launch && this.$store.dispatch('FETCH_LAUNCH', this.flight)
-    }
+    ...mapActions({
+      fetchLaunch: 'launches/FETCH_LAUNCH'
+    })
   },
-  created () {
-    this.fetchLaunch()
+  mounted () {
+    if (!this.launch && this.flight) {
+      this.fetchLaunch(this.flight)
+    }
   },
   watch: {
     '$route': 'fetchLaunch'
