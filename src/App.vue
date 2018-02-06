@@ -2,10 +2,11 @@
   <div id="app">
     <header>
       <span>SpaceX</span>
+      <nav>
+        <router-link class="link" to="/launches">Launches</router-link>
+      </nav>
     </header>
-    <nav>
-      <router-link to="/launches">Launches</router-link>
-    </nav>
+    
     <main>
       <router-view :key="$route.fullPath"></router-view>
     </main>
@@ -18,7 +19,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 body {
   margin: 0;
 }
@@ -36,11 +37,20 @@ main {
 }
 
 header {
+  display: flex;
   margin: 0;
   height: 56px;
   padding: 0 16px 0 24px;
   background-color: #35495E;
   color: #ffffff;
+
+  justify-content: space-between;
+  align-items: center;
+}
+
+.link {
+  color: white;
+  text-decoration: none;
 }
 
 header span {
@@ -51,6 +61,5 @@ header span {
   letter-spacing: .02em;
   font-weight: 400;
   box-sizing: border-box;
-  padding-top: 16px;
 }
 </style>

@@ -1,20 +1,18 @@
 <template>
-  <div v-if="launch">
-    <div>{{launch.rocket.rocket_name}} launched in {{launch.launch_year}} from {{launch.launch_site.site_name_long}}.</div>
-    <div>{{success}}</div>
-  </div>
+  <launch-details v-if="launch" :launch="launch"></launch-details>
 </template>
 
 <script>
 import { mapActions } from 'vuex'
+import LaunchDetails from '@/components/LaunchDetails'
 
 export default {
   props: ['flight'],
   name: 'launch',
+  components: {
+    LaunchDetails
+  },
   computed: {
-    success () {
-      return this.launch.launch_success ? 'Successful' : 'Failed'
-    },
     launch () {
       return this.$store.getters['launches/getLaunch'](this.flight)
     }
@@ -28,12 +26,6 @@ export default {
     if (!this.launch && this.flight) {
       this.fetchLaunch(this.flight)
     }
-  },
-  watch: {
-    '$route': 'fetchLaunch'
   }
 }
 </script>
-
-<style lang="scss">
-</style>
