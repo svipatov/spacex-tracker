@@ -10,6 +10,7 @@ export default new Router({
     {
       path: '/launches',
       name: 'launches',
+      alias: '/',
       component: Launches
     },
     {
