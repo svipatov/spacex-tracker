@@ -1,19 +1,20 @@
 <template>
-  <div>
-    <div class="launch" v-for="launch in orderedLaunches" :key="launch.flight_number">
-      <span>{{launch.flight_number}}.</span>
-      <span>{{launch.rocket.rocket_name}}</span>
-      <div>{{launch.details}}</div>
-      <router-link :to="goToLaunch(launch)">Read more</router-link>
-    </div>
+  <div class="launches">
+    <launch-item v-for="launch in orderedLaunches" :launch="launch" :key="launch.flight_number">
+      <router-link slot="link" :to="goToLaunch(launch)">Read more</router-link>
+    </launch-item>
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
+import LaunchItem from '@/components/LaunchItem'
 
 export default {
   name: 'launches',
+  components: {
+    LaunchItem
+  },
   methods: {
     goToLaunch (launch) {
       return {
@@ -38,11 +39,15 @@ export default {
 }
 </script>
 
-<style lang="scss">
-.launch {
-  margin: 5px;
-  padding: 5px;
-  border: solid 1px black;
-  border-radius: 3px;
-}
+<style lang="scss" scoped>
+  .launches {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px 5px;
+  }
+
+  .launch-item {
+
+  }
 </style>
+

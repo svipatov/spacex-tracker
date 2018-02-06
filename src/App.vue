@@ -3,13 +3,27 @@
     <header>
       <span>SpaceX</span>
       <nav>
-        <router-link class="link" to="/launches">Launches</router-link>
+        <router-link class="link" to="/">Launches</router-link>
       </nav>
     </header>
-    
+
     <main>
       <router-view :key="$route.fullPath"></router-view>
     </main>
+
+    <aside>
+      <ul>
+        <li>Cenas 1</li>
+        <li>Cenas 1</li>
+        <li>Cenas 1</li>
+        <li>Cenas 1</li>
+        <li>Cenas 1</li>
+      </ul>
+    </aside>
+
+    <footer>
+      Footer Cenas
+    </footer>
   </div>
 </template>
 
@@ -25,27 +39,60 @@ body {
 }
 
 #app {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+  "header"
+  "main"
+  "footer";
+  
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-}
 
-main {
-  text-align: center;
-  margin-top: 40px;
+  @media only screen and (min-width: 720px) {
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+    "header header"
+    "aside main"
+    "footer footer";
+  }
 }
 
 header {
   display: flex;
-  margin: 0;
-  height: 56px;
-  padding: 0 16px 0 24px;
-  background-color: #35495E;
-  color: #ffffff;
-
-  justify-content: space-between;
+  grid-area: header;
   align-items: center;
+  
+  margin: 0;
+  padding: 0 16px 0 24px;
+
+  height: 56px;
+  background-color: #35495E;
+
+  color: #ffffff;
+  justify-content: space-between;
+}
+
+main {
+  grid-area: main;
+  margin-top: 40px;
+
+  text-align: center;
+}
+
+aside {
+  display: none;
+  grid-area: aside;
+  
+  @media only screen and (min-width: 720px) {
+    display: block;
+  }
+}
+
+footer {
+  grid-area: footer;
 }
 
 .link {
