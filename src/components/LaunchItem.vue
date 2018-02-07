@@ -1,9 +1,13 @@
 <template>
   <div class="launch">
-    <span>{{launch.flight_number}}.</span>
-    <span>{{launch.rocket.rocket_name}}</span>
-    <div>{{launch.details}}</div>
-    <slot name="link"></slot>
+    <div class="launch__details">
+      <span>{{launch.flight_number}}.</span>
+      <span>{{launch.rocket.rocket_name}}</span>
+      <div class="launch-info">{{launch.details}}</div>
+    </div>
+    <div class="launch__more-details">
+      <slot name="link"></slot>
+    </div>
   </div>
 </template>
 
@@ -15,9 +19,19 @@ export default {
 
 <style lang="scss" scoped>
 	.launch {
-		margin: 5px;
-		padding: 5px;
+    display: flex;
+    flex-direction: column;
 		border: solid 1px black;
-		border-radius: 3px;
+    border-radius: 3px;
+
+    &__details {
+      height: 100%;
+      padding: 5px;
+    }
+    
+    &__more-details {
+      border-top: 1px solid black;
+      padding: 5px;
+    }
 	}
 </style>

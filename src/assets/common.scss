@@ -1,0 +1,10 @@
+@import './_colors.scss';
+
+.router-link {
+  color: $white;
+  text-decoration: none;
+
+  &.router-link-active {
+    font-weight: bold;
+  }
+}
