@@ -18,6 +18,10 @@ export default new Router({
       name: 'launch',
       component: Launch,
       props: true
+    },
+    {
+      path: '/rockets',
+      name: 'rockets'
     }
   ]
 })
