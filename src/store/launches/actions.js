@@ -1,14 +1,19 @@
 import { ACTIONS, MUTATIONS } from './constants'
-import { getLaunches } from '@/api/launches'
+import { getLaunch, getPastLaunches, getUpcomingLaunches } from '@/api/launches'
 
 export default {
-  [ACTIONS.FETCH_LAUNCHES] ({ commit }) {
-    return getLaunches().then(response => {
+  [ACTIONS.FETCH_PAST] ({ commit }) {
+    return getPastLaunches().then(response => {
+      commit(MUTATIONS.SET_LAUNCHES, response.data)
+    })
+  },
+  [ACTIONS.FETCH_UPCOMING] ({ commit }) {
+    return getUpcomingLaunches().then(response => {
       commit(MUTATIONS.SET_LAUNCHES, response.data)
     })
   },
   [ACTIONS.FETCH_LAUNCH] ({ commit }, flight) {
-    return getLaunches({ flight }).then(response => {
+    return getLaunch({ flight }).then(response => {
       commit(MUTATIONS.SET_LAUNCHES, response.data)
     })
   }

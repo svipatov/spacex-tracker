@@ -1,4 +1,6 @@
-import Launches from '@/views/Launches'
+import PastLaunches from '@/views/PastLaunches'
+import UpcomingLaunches from '@/views/UpcomingLaunches'
+import LaunchesPicker from '@/views/LaunchesPicker'
 import Launch from '@/views/Launch'
 
 export const LaunchesRouting = [
@@ -10,7 +12,18 @@ export const LaunchesRouting = [
   {
     path: '/launches',
     name: 'launches',
-    component: Launches
+    redirect: '/launches/upcoming',
+    children: [
+      {
+        path: 'upcoming',
+        component: UpcomingLaunches
+      },
+      {
+        path: 'past',
+        component: PastLaunches
+      }
+    ],
+    component: LaunchesPicker
   },
   {
     path: '/launches/:flight',

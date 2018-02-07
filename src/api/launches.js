@@ -1,13 +1,23 @@
 import { http } from './spacex-common'
 
-function getLaunches (launchFilter = {}) {
+function getPastLaunches () {
+  return http.get('/launches')
+}
+
+function getUpcomingLaunches (launchFilter = {}) {
+  return http.get('/launches/upcoming')
+}
+
+function getLaunch (launchFilter = {}) {
   const filter = {
     flight_number: launchFilter.flight
   }
 
-  return http.get('/launches', { params: filter })
+  return http.get('/launches/upcoming', { params: filter })
 }
 
 export {
-  getLaunches
+  getLaunch,
+  getPastLaunches,
+  getUpcomingLaunches
 }
