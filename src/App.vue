@@ -30,7 +30,11 @@ body {
 
 #app {
   display: grid;
+  position: relative;
+  height: 100%;
+  min-height: 100vh;
   grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
   grid-template-areas:
   "header"
   "main"
@@ -44,7 +48,7 @@ body {
 
 main {
   grid-area: main;
-  margin: 40px 5px 0 5px;
+  margin: 20px 5px;
 
   text-align: center;
 }
