@@ -2,7 +2,7 @@
   <header class="header">
 		<span class="header__title">SpaceX</span>
 		<nav class="navigation">
-			<router-link class="router-link" to="/" exact>Launches</router-link>
+			<router-link class="router-link" to="/launches">Launches</router-link>
 			<router-link class="router-link" to="/rockets">Rockets</router-link>
 		</nav>
 	</header>
@@ -15,6 +15,8 @@
 		display: flex;
 		grid-area: header;
 		align-items: center;
+		position: sticky;
+    top: 0;
 		
 		margin: 0;
 		padding: 0 16px;

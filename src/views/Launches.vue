@@ -42,11 +42,15 @@ export default {
 <style lang="scss" scoped>
   .launches {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 10px 5px;
 
-    @media (min-width: 900px) {
-      grid-template-columns: repeat(8, 1fr);
+    @media (min-width: 720px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(5, 1fr);
     }
   }
 

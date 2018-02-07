@@ -3,9 +3,13 @@ import Launch from '@/views/Launch'
 
 export const LaunchesRouting = [
   {
+    path: '/',
+    name: 'home',
+    redirect: '/launches'
+  },
+  {
     path: '/launches',
     name: 'launches',
-    alias: '/',
     component: Launches
   },
   {
