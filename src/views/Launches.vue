@@ -44,6 +44,10 @@ export default {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 10px 5px;
+
+    @media (min-width: 900px) {
+      grid-template-columns: repeat(8, 1fr);
+    }
   }
 
   .launch-item {

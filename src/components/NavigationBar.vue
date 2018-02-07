@@ -9,13 +9,15 @@
 </template>
 
 <style lang="scss" scoped>
+	@import '../assets/_colors.scss';
+
 	.header {
 		display: flex;
 		grid-area: header;
 		align-items: center;
 		
 		margin: 0;
-		padding: 0 16px 0 24px;
+		padding: 0 16px;
 
 		height: 56px;
 		background-color: #35495E;
