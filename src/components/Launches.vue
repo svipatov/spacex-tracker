@@ -1,19 +1,20 @@
 <template>
   <div class="launches">
-    <launch-item v-for="launch in orderedLaunches" :launch="launch" :key="launch.flight_number">
+    <launches-item v-for="launch in launches" :launch="launch" :key="launch.flight_number">
       <router-link slot="link" :to="goToLaunch(launch)">Read more</router-link>
-    </launch-item>
+    </launches-item>
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
-import LaunchItem from '@/components/LaunchItem'
+import LaunchesItem from '@/components/LaunchesItem'
 
 export default {
+  props: ['launches'],
   name: 'launches',
   components: {
-    LaunchItem
+    LaunchesItem
   },
   methods: {
     goToLaunch (launch) {
@@ -32,9 +33,6 @@ export default {
         b.flight_number - a.flight_number
       )
     }
-  },
-  created () {
-    this.$store.dispatch('launches/FETCH_LAUNCHES')
   }
 }
 </script>
@@ -52,10 +50,6 @@ export default {
     @media (min-width: 1024px) {
       grid-template-columns: repeat(5, 1fr);
     }
-  }
-
-  .launch-item {
-
   }
 </style>
 
