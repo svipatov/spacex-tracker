@@ -12,7 +12,7 @@ export default {
     Launches
   },
   computed: {
-    ...mapGetters({ getLaunches: 'launches/getAllLaunches' }),
+    ...mapGetters({ getLaunches: 'launches/getUpcoming' }),
     orderedLaunches () {
       return [...this.getLaunches].sort((a, b) =>
         b.flight_number - a.flight_number

@@ -20,6 +20,7 @@ export const LaunchesRouting = [
       },
       {
         path: 'past',
+        name: 'past',
         component: PastLaunches
       }
     ],

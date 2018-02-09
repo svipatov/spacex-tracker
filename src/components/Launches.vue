@@ -21,7 +21,7 @@ export default {
       return {
         name: 'launch',
         params: {
-          flight: launch.flight_number
+          flight: launch.id
         }
       }
     }
