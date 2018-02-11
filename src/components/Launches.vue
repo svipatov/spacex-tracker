@@ -21,7 +21,7 @@ export default {
       return {
         name: 'launch',
         params: {
-          flight: launch.flight_number
+          flight: launch.id
         }
       }
     }
@@ -30,7 +30,7 @@ export default {
     ...mapGetters({ getLaunches: 'launches/getAllLaunches' }),
     orderedLaunches () {
       return [...this.getLaunches].sort((a, b) =>
-        b.flight_number - a.flight_number
+        b.id - a.id
       )
     }
   }

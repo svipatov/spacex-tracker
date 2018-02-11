@@ -1,20 +1,24 @@
 import { ACTIONS, MUTATIONS } from './constants'
 import { getLaunch, getPastLaunches, getUpcomingLaunches } from '@/api/launches'
+import { buildLaunchModel } from '@/models/launch'
+
+const addLaunches = (commit, response) => {
+  response.data.forEach(launch => {
+    const launchModel = buildLaunchModel(launch)
+    if (launchModel) {
+      commit(MUTATIONS.ADD_LAUNCH, launchModel)
+    }
+  })
+}
 
 export default {
   [ACTIONS.FETCH_PAST] ({ commit }) {
-    return getPastLaunches().then(response => {
-      commit(MUTATIONS.SET_LAUNCHES, response.data)
-    })
+    return getPastLaunches().then(response => addLaunches(commit, response))
   },
   [ACTIONS.FETCH_UPCOMING] ({ commit }) {
-    return getUpcomingLaunches().then(response => {
-      commit(MUTATIONS.SET_LAUNCHES, response.data)
-    })
+    return getUpcomingLaunches().then(response => addLaunches(commit, response))
   },
   [ACTIONS.FETCH_LAUNCH] ({ commit }, flight) {
-    return getLaunch({ flight }).then(response => {
-      commit(MUTATIONS.SET_LAUNCHES, response.data)
-    })
+    return getLaunch({ flight }).then(response => addLaunches(commit, response))
   }
 }

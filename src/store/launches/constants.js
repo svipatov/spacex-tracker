@@ -1,5 +1,5 @@
 export const MUTATIONS = {
-  SET_LAUNCHES: 'SET_LAUNCHES'
+  ADD_LAUNCH: 'ADD_LAUNCH'
 }
 
 export const ACTIONS = {
