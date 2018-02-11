@@ -1,7 +1,7 @@
 <template>
   <div>
-    <img class="patch" :src="launch.links.mission_patch" :alt="launch.rocket.rocket_name"/>
-    <div>{{launch.rocket.rocket_name}} launched in {{launch.launch_year}} from {{launch.launch_site.site_name_long}}.</div>
+    <img class="patch" :src="launch.patch_logo" :alt="launch.rocket.name"/>
+    <div>{{launch.rocket.name}} launched in {{launch.year}} from {{launch.launch_site.name}}.</div>
     <div>{{success}}</div>
   </div>
 </template>
