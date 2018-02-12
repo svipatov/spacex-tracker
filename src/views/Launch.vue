@@ -1,7 +1,7 @@
 <template>
   <div>
     <launch-details v-if="launch" :launch="launch"></launch-details>
-    <div v-if="missingLaunch">
+    <div v-if="!launch">
       <p>There's no information for this launch!</p>
       <router-link to="past">Read more</router-link>
     </div>
@@ -34,10 +34,6 @@ export default {
   mounted () {
     if (!this.launch && this.flight) {
       this.fetchLaunch(this.flight)
-    }
-
-    if (!this.launch) {
-      this.missingLaunch = true
     }
   }
 }

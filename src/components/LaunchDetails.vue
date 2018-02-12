@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img class="patch" :src="launch.patch_logo" :alt="launch.rocket.name"/>
+    <img v-if="launch.patch_logo" class="patch" :src="launch.patch_logo" :alt="launch.rocket.name"/>
     <div>{{launch.rocket.name}} launched in {{launch.year}} from {{launch.launch_site.name}}.</div>
     <div>{{success}}</div>
   </div>
