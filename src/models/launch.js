@@ -19,8 +19,9 @@ class Model {
     this.rocket = buildRocketModel(launch.rocket)
     this.details = launch.details
     this.date = new Date(launch.launch_date_unix * 1000) // Unix timestamp conversion in Javascript
-    this.patch_logo = launch.links.patch
+    this.patch_logo = launch.links.mission_patch
     this.launch_site = buildLaunchSiteModel(launch.launch_site)
+    this.year = launch.launch_year
   }
 
   isPast () {

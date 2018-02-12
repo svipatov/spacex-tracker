@@ -13,7 +13,7 @@ function getLaunch (launchFilter = {}) {
     flight_number: launchFilter.flight
   }
 
-  return http.get('/launches/upcoming', { params: filter })
+  return http.get('/launches', { params: filter })
 }
 
 export {

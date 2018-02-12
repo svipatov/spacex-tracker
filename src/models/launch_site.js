@@ -6,7 +6,7 @@ const schema = Yup.object().shape({
 
 class Model {
   constructor (site) {
-    this.name = site.name
+    this.name = site.site_name
   }
 
   validate () {
