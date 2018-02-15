@@ -13,17 +13,12 @@
 </template>
 
 <script>
+import { americanDate } from '@/helpers/date'
 export default {
   props: ['launch'],
   computed: {
     date () {
-      const date = this.launch.date
-      const month = date.getMonth() + 1
-      const day = date.getDay()
-      const formatedMonth = month > 10 ? month : '0' + month
-      const formatedDay = day > 10 ? day : '0' + day
-
-      return `${formatedDay}-${formatedMonth}-${date.getFullYear()}`
+      return americanDate(this.launch.date)
     }
   }
 }
