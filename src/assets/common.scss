@@ -1,10 +1,33 @@
-@import './_colors.scss';
+@import "./_colors.scss";
 
 .router-link {
   color: $white;
   text-decoration: none;
 
+  &::after {
+    content: "";
+    display: block;
+    height: 1px;
+
+    bottom: 2px;
+
+    background-color: #fff;
+    transform: scaleX(0);
+
+    transform-origin: right center;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+  }
+
   &.router-link-active {
     font-weight: bold;
+    cursor: default;
+
+    &::after {
+      transform: scaleX(1);
+    }
   }
 }

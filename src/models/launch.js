@@ -15,6 +15,7 @@ const schema = Yup.object().shape({
 
 class Model {
   constructor (launch) {
+    console.log(launch)
     this.id = launch.flight_number
     this.rocket = buildRocketModel(launch.rocket)
     this.details = launch.details
