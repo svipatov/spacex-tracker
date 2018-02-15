@@ -22,6 +22,14 @@ class Model {
     this.patch_logo = launch.links.mission_patch
     this.launch_site = buildLaunchSiteModel(launch.launch_site)
     this.year = launch.launch_year
+    this.success = this.buildSuccess(launch)
+  }
+
+  buildSuccess (launch) {
+    if (launch.launch_success === undefined) {
+      return null
+    }
+    return launch.launch_success
   }
 
   isPast () {
