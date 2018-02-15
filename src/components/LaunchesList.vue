@@ -1,14 +1,14 @@
 <template>
   <div class="launches">
     <launches-item v-for="launch in launches" :launch="launch" :key="launch.flight_number">
-      <router-link slot="link" :to="goToLaunch(launch)">Read more</router-link>
+      <router-link class="router-link" slot="link" :to="goToLaunch(launch)">Read more</router-link>
     </launches-item>
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
-import LaunchesItem from '@/components/LaunchesItem'
+import LaunchesItem from '@/components/LaunchesListItem'
 
 export default {
   props: ['launches'],

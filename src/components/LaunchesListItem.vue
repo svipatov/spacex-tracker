@@ -29,8 +29,12 @@ export default {
 .launch {
   display: flex;
   flex-direction: column;
-  border-radius: 4px;
-  border: 1px solid black;
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: 
+    0 2px 2px 0 rgba(0,0,0,.14),
+    0 3px 1px -2px rgba(0,0,0,.2), 
+    0 1px 5px 0 rgba(0,0,0,.12);
 }
 
 .name {
@@ -47,6 +51,7 @@ export default {
   position: relative;
   height: 100%;
   padding: 5px;
+  background-color: white;
 }
 
 .identifier {
@@ -54,20 +59,20 @@ export default {
   top: 0;
   left: 0;
 
-  border-radius: 3px 3px 6px 3px;
+  border-radius: 0 0 6px 0;
   padding: 3px 10px;
 
+  box-shadow: 0 0 2px black;
   color: white;
   background-color: #35495e;
 }
 
 .info {
-  border-bottom: 1px solid black;
   padding: 14px 8px;
 }
 
 .more-details {
-  border-bottom: 1px solid black;  
   padding: 5px;
+  background-color: #35495e;
 }
 </style>

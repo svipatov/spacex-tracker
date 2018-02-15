@@ -1,6 +1,7 @@
 import PastLaunches from '@/views/PastLaunches'
 import UpcomingLaunches from '@/views/UpcomingLaunches'
-import LaunchesPicker from '@/views/LaunchesPicker'
+import Launches from '@/views/Launches'
+import SubNavigationBar from '@/components/SubNavigationBar'
 import Launch from '@/views/Launch'
 
 export const LaunchesRouting = [
@@ -16,6 +17,7 @@ export const LaunchesRouting = [
     children: [
       {
         path: 'upcoming',
+        name: 'upcoming',
         component: UpcomingLaunches
       },
       {
@@ -24,7 +26,21 @@ export const LaunchesRouting = [
         component: PastLaunches
       }
     ],
-    component: LaunchesPicker
+    components: {
+      default: Launches,
+      subBar: SubNavigationBar
+    },
+    props: {
+      subBar: {
+        items: [{
+          label: 'Upcoming',
+          url: 'upcoming'
+        }, {
+          label: 'Past',
+          url: 'past'
+        }]
+      }
+    }
   },
   {
     path: '/launches/:flight',

@@ -1,15 +1,15 @@
 <template>
-  <launches :launches="orderedLaunches"></launches>
+  <launches-list :launches="orderedLaunches"></launches-list>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
-import Launches from '@/components/Launches'
+import LaunchesList from '@/components/LaunchesList'
 
 export default {
   name: 'upcoming-launches',
   components: {
-    Launches
+    LaunchesList
   },
   computed: {
     ...mapGetters({ getLaunches: 'launches/getUpcoming' }),
