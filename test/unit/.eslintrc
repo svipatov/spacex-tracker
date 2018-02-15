@@ -3,7 +3,20 @@
     "mocha": true
   },
   "globals": {
+    "afterEach": true,
+    "beforeEach": true,
+    "config": true,
+    "describe": true,
     "expect": true,
-    "sinon": true
+    "it": true,
+    "jest": true,
+    "mockFn": true,
+    "pit": true,
+    "require": true,
+    "runs": true,
+    "sinon": true,
+    "waitsFor": true,
+    "xdescribe": true,
+    "xit": true
   }
 }
