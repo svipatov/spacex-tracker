@@ -30,20 +30,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@mixin border {
-  position: relative;
-  &::before {
-    content: "";
-    position: absolute;
-    width: calc(100% + 10px);
-    height: 1px;
-
-    top: 0;
-    left: -5px;
-
-    background-color: #000;
-  }
-}
 
 .launch {
   display: flex;
@@ -81,12 +67,12 @@ export default {
 }
 
 .info {
-  @include border;
+  border-bottom: 1px solid black;
   padding: 14px 8px;
 }
 
 .more-details {
-  @include border;
+  border-bottom: 1px solid black;  
   padding: 5px;
 }
 </style>
