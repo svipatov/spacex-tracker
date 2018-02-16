@@ -12,7 +12,9 @@
     "unit:watch": "cross-env BABEL_ENV=test jest --watch ./src",
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
-    "lint": "eslint --ext .js,.vue src test/e2e/specs"
+    "lint": "eslint --ext .js,.vue src test/e2e/specs",
+    "styleguide": "vue-styleguidist server",
+    "styleguide:build": "vue-styleguidist build"
   },
   "dependencies": {
     "axios": "0.17.1",
@@ -78,9 +80,10 @@
     "vue-loader": "^13.3.0",
     "vue-server-renderer": "^2.5.13",
     "vue-style-loader": "^3.0.3",
+    "vue-styleguidist": "^1.4.6",
     "vue-template-compiler": "^2.5.2",
     "vue-test-utils": "^1.0.0-beta.11",
-    "webpack": "^3.7.1",
+    "webpack": "^3.11.0",
     "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-middleware": "^1.12.0",
     "webpack-hot-middleware": "^2.19.1",
