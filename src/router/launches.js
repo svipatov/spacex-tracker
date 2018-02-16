@@ -1,5 +1,3 @@
-import PastLaunches from '@/views/PastLaunches'
-import UpcomingLaunches from '@/views/UpcomingLaunches'
 import Launches from '@/views/Launches'
 import SubNavigationBar from '@/components/SubNavigationBar'
 import Launch from '@/views/Launch'
@@ -18,12 +16,12 @@ export const LaunchesRouting = [
       {
         path: 'upcoming',
         name: 'upcoming',
-        component: UpcomingLaunches
+        component: Launches
       },
       {
         path: 'past',
         name: 'past',
-        component: PastLaunches
+        component: Launches
       }
     ],
     components: {
@@ -31,14 +29,19 @@ export const LaunchesRouting = [
       subBar: SubNavigationBar
     },
     props: {
+      // Specifies the Launches view what launch type it is (past or upcoming)
+      default: route => ({ type: route.name }),
       subBar: {
-        items: [{
-          label: 'Upcoming',
-          url: 'upcoming'
-        }, {
-          label: 'Past',
-          url: 'past'
-        }]
+        items: [
+          {
+            label: 'Upcoming',
+            url: 'upcoming'
+          },
+          {
+            label: 'Past',
+            url: 'past'
+          }
+        ]
       }
     }
   },
