@@ -1,15 +1,18 @@
 # spacex-tracker
 
-> A Vue.js project
+Website that allows tracking of all SpaceX's flights!
+
 # Live demo
+
 https://svipatov.github.io/spacex-tracker
 
 ## SpaceX API
+
 https://github.com/r-spacex/SpaceX-API/wiki
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 npm install
 
@@ -32,4 +35,17 @@ npm run e2e
 npm test
 ```
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## Contributors
+
+<div style="display: flex; justify-content: center; align-items: center">
+  <a href="https://github.com/svipatov" style="width: 200px; height: 200px; border-radius: 50%; overflow: hidden">
+    <img src="https://ca.slack-edge.com/T02A2SS1Q-U0D3XNSBV-4996d5302794-512"/>
+  </a>
+
+  <a href="https://github.com/rafaelramalho19" style="width: 200px; height: 200px; border-radius: 50%; overflow: hidden; margin: 8px 32px">
+    <img src="https://ca.slack-edge.com/T02A2SS1Q-U8M1V6268-2ae15ce18b71-512"/>
+  </a>
+
+</div>
+
+<p style="text-align: center">Reach us at our profile if you need any extra info 🎩</p>
