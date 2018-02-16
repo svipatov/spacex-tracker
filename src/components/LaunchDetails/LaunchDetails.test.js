@@ -6,10 +6,10 @@ describe('Components - LaunchDetails', function () {
 
   describe('Computed properties', () => {
     describe('@Success', () => {
-      it("should return false when the launch's success is null", () => {
+      it("should return false when the launch's success is undefined", () => {
         const cmp = this.buildComponent({
           launch: {
-            success: null
+            property: 'bananas'
           }
         })
         expect(cmp.success).toBe(false)
