@@ -1,4 +1,4 @@
-Default
+# Default
 
 ```jsx
   <Navigation-bar></Navigation-bar>
