@@ -39,13 +39,13 @@ npm test
 
 <div style="display: flex; justify-content: center; align-items: center">
   <a href="https://github.com/svipatov" style="width: 200px; height: 200px; border-radius: 50%; overflow: hidden">
-    <img src="https://ca.slack-edge.com/T02A2SS1Q-U0D3XNSBV-4996d5302794-512"/>
+    <img width="200" height="200" src="https://ca.slack-edge.com/T02A2SS1Q-U0D3XNSBV-4996d5302794-512"/>
   </a>
 
   <a href="https://github.com/rafaelramalho19" style="width: 200px; height: 200px; border-radius: 50%; overflow: hidden; margin: 8px 32px">
-    <img src="https://ca.slack-edge.com/T02A2SS1Q-U8M1V6268-2ae15ce18b71-512"/>
+    <img width="200" height="200" src="https://ca.slack-edge.com/T02A2SS1Q-U8M1V6268-2ae15ce18b71-512"/>
   </a>
 
 </div>
 
-<p style="text-align: center">Reach us at our profile if you need any extra info 🎩</p>
+<center style="text-align: center">Reach us at our profile if you need any extra info 🎩</center>
