@@ -45,8 +45,6 @@ describe('Launch Mutations', () => {
           }
         ]
 
-        expect(this.state.launches).toEqual(expectedState)
-
         addLaunchMutation(this.state, this.launch)
 
         expect(this.state.launches).toEqual(expectedState)
