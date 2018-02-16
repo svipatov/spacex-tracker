@@ -23,5 +23,28 @@ module.exports = {
     'generator-star-spacing': 0,
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
+  },
+  overrides: {
+    files: 'src/**/*.test.js',
+    env: {
+      jest: true
+    },
+    globals: {
+      afterEach: true,
+      beforeEach: true,
+      config: true,
+      describe: true,
+      expect: true,
+      it: true,
+      jest: true,
+      mockFn: true,
+      pit: true,
+      require: true,
+      runs: true,
+      sinon: true,
+      waitsFor: true,
+      xdescribe: true,
+      xit: true
+    }
   }
 }

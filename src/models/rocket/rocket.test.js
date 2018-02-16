@@ -1,4 +1,4 @@
-import { buildRocketModel } from '@/models/rocket'
+import { buildRocketModel } from '@/models/rocket/rocket'
 
 describe('Rocket Model', () => {
   describe('when an invalid rocket payload is provided', () => {
@@ -7,8 +7,15 @@ describe('Rocket Model', () => {
     })
   })
 
+  describe('when no rocket payload is provided', () => {
+    it('should throw an error', () => {
+      expect(() => buildRocketModel()).toThrowError()
+    })
+  })
+
   describe('when a rocket payload only contains an ID', () => {
     const rocket = buildRocketModel({ rocket_id: 'R1' })
+
     it('should create rocket with only the id', () => {
       expect(rocket).toBeDefined()
       expect(rocket).toHaveProperty('id')

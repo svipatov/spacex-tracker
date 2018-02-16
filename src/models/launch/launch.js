@@ -1,6 +1,6 @@
 import Yup from 'yup'
-import { buildRocketModel } from './rocket'
-import { buildLaunchSiteModel } from './launch_site'
+import { buildRocketModel } from '@/models/rocket/rocket'
+import { buildLaunchSiteModel } from '@/models/launch_site/launch_site'
 
 const schema = Yup.object().shape({
   id: Yup.number().required(),
