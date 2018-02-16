@@ -43,6 +43,7 @@ class Model {
 
 export function buildLaunchModel (launch) {
   const model = new Model(launch)
+
   if (model.validate()) {
     return model
   }
