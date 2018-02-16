@@ -1,7 +1,13 @@
 Default
 
 ```jsx
-  <Navigation-bar title="SpaceX"></Navigation-bar>
+  <Navigation-bar></Navigation-bar>
+```
+
+With title
+
+```jsx
+  <Navigation-bar title="SpaceX Navbar"></Navigation-bar>
 ```
 
 With links
