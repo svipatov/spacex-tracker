@@ -38,16 +38,20 @@ npm test
 ## Contributors
 
 <table align="center">
-  <tr><td>
-    <a href="https://github.com/svipatov" style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden">
-      <img width="100" height="100" src="https://ca.slack-edge.com/T02A2SS1Q-U0D3XNSBV-4996d5302794-512"/>
-    </a>
-  </td>
-  <td>
-    <a href="https://github.com/rafaelramalho19" style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden; margin: 8px 32px">
-      <img width="100" height="100" src="https://ca.slack-edge.com/T02A2SS1Q-U8M1V6268-2ae15ce18b71-512"/>
-    </a>
-  </td></tr>
+  <tbody align="center">
+    <tr align="center">
+      <td align="center">
+        <a href="https://github.com/svipatov" style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden">
+          <img width="100" height="100" src="https://ca.slack-edge.com/T02A2SS1Q-U0D3XNSBV-4996d5302794-512"/>
+        </a>
+      </td>
+      <td align="center">
+        <a href="https://github.com/rafaelramalho19" style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden; margin: 8px 32px">
+          <img width="100" height="100" src="https://ca.slack-edge.com/T02A2SS1Q-U8M1V6268-2ae15ce18b71-512"/>
+        </a>
+      </td>
+    </tr>
+  </tbody>
 </table>
 
 <center style="text-align: center">Reach us at our profile if you need any extra info 🎩</center>
