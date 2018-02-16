@@ -59,10 +59,13 @@ export default {
   top: 0;
   left: 0;
 
-  border-radius: 0 0 6px 0;
+  border-radius: 0 0 2px 0;
   padding: 3px 10px;
 
-  box-shadow: 0 0 2px black;
+  box-shadow: 
+      0 2px 2px 0 rgba(0,0,0,.14),
+      0 3px 1px -2px rgba(0,0,0,.2), 
+      0 1px 5px 0 rgba(0,0,0,.12);
   color: white;
   background-color: #35495e;
 }
