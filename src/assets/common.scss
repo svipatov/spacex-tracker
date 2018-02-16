@@ -1,4 +1,5 @@
-@import "./_colors.scss";
+@import "./colors";
+@import "./reset";
 
 .router-link {
   position: relative;
@@ -9,11 +10,10 @@
     content: "";
     position: absolute;
     height: 1px;
-    
+
     right: 0;
     bottom: 0;
     left: 0;
-
 
     background-color: #fff;
     transform: scaleX(0);
