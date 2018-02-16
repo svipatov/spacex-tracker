@@ -37,6 +37,9 @@ npm test
 
 ## Contributors
 
+<p align="center">You can contribute! Just read the [guidelines](CONTRIBUTING.md) 🤓</p>
+
+
 <p align="center">
   <a href="https://github.com/svipatov">
     <img width="100" height="100" src="http://pichoster.net/images/2018/02/16/bdb380ca992db67c5b14c72f713a8d64.png" alt="svipatov image"/>
