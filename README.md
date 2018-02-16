@@ -41,6 +41,7 @@ npm test
   <a href="https://github.com/svipatov" style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden">
     <img width="100" height="100" src="http://pichoster.net/images/2018/02/16/bdb380ca992db67c5b14c72f713a8d64.png"/>
   </a>
+  <span>&nbsp;</span>
   <a href="https://github.com/rafaelramalho19" style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden; margin: 8px 32px">
     <img width="100" height="100" src="http://pichoster.net/images/2018/02/16/9b659d70cb1ee1abbdefb39cfd5e1162.png"/>
   </a>
