@@ -1,17 +1,17 @@
 <template>
-  <div v-if="launch">
+  <div>
     <img v-if="launch.patch_logo" class="patch" :src="launch.patch_logo" :alt="launch.rocket.name" />
 
     <h1 v-if="launch.rocket" class="name">{{launch.rocket.name}}</h1>
 
-    <div class="row">
+    <div v-if="launch.year" class="row">
       <label>Year:</label>
       <span>{{ launch.year }}</span>
     </div>
 
-    <div v-if="launch.launch_site" class="row">
+    <div class="row">
       <label>Launch site:</label>
-      <span>{{ launch.launch_site.name }}</span>
+      <span>{{ siteName }}</span>
     </div>
 
     <div v-if="success">{{success}}</div>
@@ -19,14 +19,32 @@
 </template>
 
 <script>
+/**
+* Component that shows a specific launch information
+*/
 export default {
-  props: ['launch'],
+  name: 'LaunchDetails',
+  props: {
+    /**
+    * The launch object containing all the information
+    **/
+    launch: {
+      type: Object,
+      required: true
+    }
+  },
   computed: {
     success () {
-      if (this.launch.success === null) {
+      if (this.launch.success === null || this.launch.success === undefined) {
         return false
       }
       return this.launch.success ? 'Successful' : 'Failed'
+    },
+    siteName () {
+      if (!this.launch || !this.launch.launch_site) {
+        return 'No launch site'
+      }
+      return this.launch.launch_site
     }
   }
 }
