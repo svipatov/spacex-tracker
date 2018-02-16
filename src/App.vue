@@ -1,6 +1,12 @@
 <template>
   <div id="app">
-    <navigation-bar></navigation-bar>
+    <navigation-bar title="SpaceX">
+      <div slot="links">
+        <router-link class="router-link link" to="/launches">Launches</router-link>
+        <router-link class="router-link link" to="/rockets">Rockets</router-link>
+      </div>
+      <router-view slot="view" name="subBar"/>
+    </navigation-bar>
 
     <main>
       <router-view :key="$route.fullPath"></router-view>
@@ -11,7 +17,7 @@
 </template>
 
 <script>
-import NavigationBar from '@/components/NavigationBar'
+import NavigationBar from '@/components/NavigationBar/NavigationBar'
 import FooterBar from '@/components/FooterBar'
 
 export default {
@@ -36,11 +42,11 @@ body {
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr auto;
   grid-template-areas:
-  "header"
-  "main"
-  "footer";
-  
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    "header"
+    "main"
+    "footer";
+
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
