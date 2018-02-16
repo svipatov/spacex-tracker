@@ -22,9 +22,8 @@ const convertModel = rocket => {
 
 export const buildRocketModel = rocket => {
   const convertedModel = convertModel(rocket)
-  const isValid = schema.validateSync(convertedModel, schema)
-  if (isValid) {
-    return convertedModel
-  }
-  return false
+
+  schema.validateSync(convertedModel, schema)
+
+  return convertedModel
 }

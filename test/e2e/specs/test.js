@@ -1,8 +1,9 @@
-// For authoring Nightwatch tests, see
-// http://nightwatchjs.org/guide#usage
+const selectors = {
+  header: '.header .title'
+}
 
 module.exports = {
-  'default e2e tests': function (browser) {
+  'Check for title existence': function (browser) {
     // automatically uses dev Server port from /config.index.js
     // default: http://localhost:8080
     // see nightwatch.conf.js
@@ -11,9 +12,8 @@ module.exports = {
     browser
       .url(devServer)
       .waitForElementVisible('#app', 5000)
-      .assert.elementPresent('.hello')
-      .assert.containsText('h1', 'Welcome to Your Vue.js PWA')
-      .assert.elementCount('img', 1)
+      .assert.elementPresent(selectors.header)
+      .assert.containsText(selectors.header, 'SpaceX')
       .end()
   }
 }

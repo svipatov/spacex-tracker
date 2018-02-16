@@ -1,6 +1,6 @@
 import { ACTIONS, MUTATIONS } from './constants'
 import { getLaunch, getPastLaunches, getUpcomingLaunches } from '@/api/launches'
-import { buildLaunchModel } from '@/models/launch'
+import { buildLaunchModel } from '@/models/launch/launch'
 
 const addLaunches = (commit, response) => {
   response.data.forEach(launch => {
