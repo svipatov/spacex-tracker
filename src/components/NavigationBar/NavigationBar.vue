@@ -1,18 +1,29 @@
 <template>
   <header class="header">
     <div class="main">
-      <span class="title">SpaceX</span>
+      <span class="title">{{ title }}</span>
       <nav class="navigation">
-        <router-link class="router-link link" to="/launches">Launches</router-link>
-        <router-link class="router-link link" to="/rockets">Rockets</router-link>
+        <slot name="links"></slot>
       </nav>
     </div>
-    <router-view name="subBar"/>
+    <slot name="view"></slot>
   </header>
 </template>
 
+<script>
+export default {
+  name: 'NavigationBar',
+  props: {
+    title: {
+      type: String,
+      default: ''
+    }
+  }
+}
+</script>
+
+
 <style lang="scss" scoped>
-@import "../assets/_colors.scss";
 
 .header {
   grid-area: header;

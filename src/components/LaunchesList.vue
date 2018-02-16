@@ -12,7 +12,7 @@ import LaunchesItem from '@/components/LaunchesListItem'
 
 export default {
   props: ['launches'],
-  name: 'launches',
+  name: 'Launches',
   components: {
     LaunchesItem
   },

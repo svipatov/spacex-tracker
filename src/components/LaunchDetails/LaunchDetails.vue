@@ -35,7 +35,7 @@ export default {
   },
   computed: {
     success () {
-      if (this.launch.success === null || this.launch.success === undefined) {
+      if (this.launch.success === undefined) {
         return false
       }
       return this.launch.success ? 'Successful' : 'Failed'
@@ -44,7 +44,7 @@ export default {
       if (!this.launch || !this.launch.launch_site) {
         return 'No launch site'
       }
-      return this.launch.launch_site
+      return this.launch.launch_site.name
     }
   }
 }
