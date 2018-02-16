@@ -37,7 +37,7 @@ npm test
 
 ## Contributors
 
-<p align="center">You can contribute! Just read the [guidelines](CONTRIBUTING.md) 🤓</p>
+You can contribute! Just read the [guidelines](CONTRIBUTING.md) 🤓
 
 
 <p align="center">
