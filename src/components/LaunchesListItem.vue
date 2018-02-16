@@ -1,5 +1,5 @@
 <template>
-  <div class="launch">
+  <div v-if="launch" class="launch">
     <div class="details">
       <span class="identifier">{{ launch.id }}</span>
       <span class="name">{{ launch.rocket.name }}</span>
