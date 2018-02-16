@@ -10,7 +10,7 @@
 
 <script>
 import { mapActions } from 'vuex'
-import LaunchDetails from '@/components/LaunchDetails'
+import LaunchDetails from '@/components/LaunchDetails/LaunchDetails'
 
 export default {
   data () {
