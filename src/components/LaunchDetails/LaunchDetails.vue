@@ -1,15 +1,15 @@
 <template>
-  <div>
+  <div v-if="launch">
     <img v-if="launch.patch_logo" class="patch" :src="launch.patch_logo" :alt="launch.rocket.name" />
 
-    <h1 class="name">{{launch.rocket.name}}</h1>
+    <h1 v-if="launch.rocket" class="name">{{launch.rocket.name}}</h1>
 
     <div class="row">
       <label>Year:</label>
       <span>{{ launch.year }}</span>
     </div>
 
-    <div class="row">
+    <div v-if="launch.launch_site" class="row">
       <label>Launch site:</label>
       <span>{{ launch.launch_site.name }}</span>
     </div>
