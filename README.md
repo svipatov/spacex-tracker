@@ -46,4 +46,4 @@ npm test
   </a>
 </p>
 
-<center style="text-align: center">Reach us at our profile if you need any extra info 🎩</center>
+<p align="center">Reach us at our profile if you need any extra info 🎩</p>
