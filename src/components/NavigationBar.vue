@@ -3,8 +3,8 @@
     <div class="main">
       <span class="title">SpaceX</span>
       <nav class="navigation">
-        <router-link class="router-link router-link--big link" to="/launches">Launches</router-link>
-        <router-link class="router-link router-link--big link" to="/rockets">Rockets</router-link>
+        <router-link class="router-link link" to="/launches">Launches</router-link>
+        <router-link class="router-link link" to="/rockets">Rockets</router-link>
       </nav>
     </div>
     <router-view name="subBar"/>
