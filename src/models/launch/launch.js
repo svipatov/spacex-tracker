@@ -16,13 +16,22 @@ const schema = Yup.object().shape({
 class LaunchModel {
   constructor (launch) {
     this.id = launch.flight_number
-    this.rocket = buildRocketModel(launch.rocket)
     this.details = launch.details
-    this.date = new Date(launch.launch_date_unix * 1000) // Unix timestamp conversion in Javascript
-    this.patch_logo = launch.links.mission_patch
-    this.launch_site = buildLaunchSiteModel(launch.launch_site)
     this.year = launch.launch_year
     this.success = this.buildSuccess(launch)
+
+    if (launch.rocket) {
+      this.rocket = buildRocketModel(launch.rocket)
+    }
+    if (launch.launch_site) {
+      this.launch_site = buildLaunchSiteModel(launch.launch_site)
+    }
+    if (launch.links) {
+      this.patch_logo = launch.links.mission_patch
+    }
+    if (launch.launch_date_unix) {
+      this.date = new Date(launch.launch_date_unix * 1000) // Unix timestamp conversion in Javascript
+    }
   }
 
   buildSuccess (launch) {
