@@ -4,7 +4,7 @@ const schema = Yup.object().shape({
   name: Yup.string()
 })
 
-class Model {
+class LaunchSiteModel {
   constructor (site) {
     this.name = site.site_name
   }
@@ -14,8 +14,9 @@ class Model {
   }
 }
 
-export function buildLaunchSiteModel (launch) {
-  const model = new Model(launch)
+export function buildLaunchSiteModel (launchSite) {
+  const model = new LaunchSiteModel(launchSite)
+
   if (model.validate()) {
     return model
   }

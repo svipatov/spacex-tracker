@@ -13,7 +13,7 @@ const schema = Yup.object().shape({
     .nullable()
 })
 
-class Model {
+class LaunchModel {
   constructor (launch) {
     this.id = launch.flight_number
     this.rocket = buildRocketModel(launch.rocket)
@@ -42,7 +42,7 @@ class Model {
 }
 
 export function buildLaunchModel (launch) {
-  const model = new Model(launch)
+  const model = new LaunchModel(launch)
 
   if (model.validate()) {
     return model
