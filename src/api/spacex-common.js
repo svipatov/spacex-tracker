@@ -1,5 +1,5 @@
 import axios from 'axios'
 
-export const http = axios.create({
+export const spacex = axios.create({
   baseURL: 'https://api.spacexdata.com/v2/'
 })

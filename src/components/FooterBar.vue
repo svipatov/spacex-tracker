@@ -4,6 +4,9 @@
   </footer>
 </template>
 
+<script>
+</script>
+
 <style lang="scss" scoped>
   footer {
     grid-area: footer;

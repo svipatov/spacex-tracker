@@ -1,4 +1,4 @@
-import { http } from '@/api/spacex-common'
+import { spacex } from '@/api/spacex-common'
 import {
   getLaunch,
   getUpcomingLaunches,
@@ -7,7 +7,7 @@ import {
 
 describe('Launches API', function () {
   beforeAll(() => {
-    http.get = jest.fn().mockResolvedValue('get request response')
+    spacex.get = jest.fn().mockResolvedValue('get request response')
   })
 
   describe('getLaunch', () => {
@@ -24,7 +24,7 @@ describe('Launches API', function () {
       })
 
       it('should be called with the correct url route and filters', () => {
-        expect(http.get).toHaveBeenCalledWith('/launches/all', {
+        expect(spacex.get).toHaveBeenCalledWith('/launches/all', {
           params: {
             flight_number: 1
           }
@@ -45,7 +45,7 @@ describe('Launches API', function () {
       })
 
       it('should be called with the correct url route', () => {
-        expect(http.get).toHaveBeenCalledWith('/launches/all', {
+        expect(spacex.get).toHaveBeenCalledWith('/launches/all', {
           params: {
             flight_number: undefined
           }
@@ -67,7 +67,7 @@ describe('Launches API', function () {
     })
 
     it('should be called with the correct url route', () => {
-      expect(http.get).toHaveBeenCalledWith('/launches/upcoming')
+      expect(spacex.get).toHaveBeenCalledWith('/launches/upcoming')
     })
   })
 
@@ -84,7 +84,7 @@ describe('Launches API', function () {
     })
 
     it('should be called with the correct url route', () => {
-      expect(http.get).toHaveBeenCalledWith('/launches')
+      expect(spacex.get).toHaveBeenCalledWith('/launches')
     })
   })
 })

@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { http } from '@/api/spacex-common'
+import { spacex } from '@/api/spacex-common'
 
 jest.mock('axios', () => {
   return {
@@ -8,13 +8,13 @@ jest.mock('axios', () => {
 })
 
 describe('SpaceX Common API', function () {
-  it('should call third party http creator', () => {
+  it('should call third party spacex creator', () => {
     expect(axios.create).toHaveBeenCalledWith({
       baseURL: 'https://api.spacexdata.com/v2/'
     })
   })
 
   it('should create the http instance', () => {
-    expect(http).toEqual('axios instance')
+    expect(spacex).toEqual('axios instance')
   })
 })
