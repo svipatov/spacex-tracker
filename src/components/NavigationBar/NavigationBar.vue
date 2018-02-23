@@ -1,4 +1,4 @@
-<template functional>
+<template>
   <header class="header">
     <div class="main">
       <span class="title">{{ title }}</span>
