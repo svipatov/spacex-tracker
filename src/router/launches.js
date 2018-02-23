@@ -1,5 +1,5 @@
 import Launches from '@/views/Launches'
-import SubNavigationBar from '@/components/SubNavigationBar'
+import SubNavigationBar from '@/components/SubNavigationBar/SubNavigationBar'
 import Launch from '@/views/Launch'
 
 export const LaunchesRouting = [
