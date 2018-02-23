@@ -56,7 +56,5 @@ body {
 main {
   grid-area: main;
   margin: 20px 5px;
-
-  text-align: center;
 }
 </style>

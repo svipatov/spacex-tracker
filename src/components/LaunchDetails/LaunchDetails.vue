@@ -41,7 +41,7 @@ export default {
       return this.launch.success ? 'Successful' : 'Failed'
     },
     siteName () {
-      if (!this.launch || !this.launch.launch_site) {
+      if (!this.launch.launch_site) {
         return 'No launch site'
       }
       return this.launch.launch_site.name

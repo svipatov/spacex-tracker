@@ -1,8 +1,8 @@
 <template>
-  <div v-if="launch" class="launch">
+  <div class="launch">
     <div class="details">
       <span class="identifier">{{ launch.id }}</span>
-      <span class="name">{{ launch.rocket.name }}</span>
+      <span v-if="launch.rocket" class="name">{{ launch.rocket.name }}</span>
       <div class="date">{{ date }}</div>
       <div class="info">{{ launch.details }}</div>
     </div>
@@ -14,11 +14,23 @@
 
 <script>
 import { americanDate } from '@/helpers/date'
+
 export default {
-  props: ['launch'],
+  name: 'LaunchCard',
+  props: {
+    /**
+    * The launch object containing all the information
+    **/
+    launch: {
+      type: Object,
+      required: true
+    }
+  },
   computed: {
     date () {
-      return americanDate(this.launch.date)
+      if (this.launch.date) {
+        return americanDate(this.launch.date)
+      }
     }
   }
 }
@@ -31,6 +43,7 @@ export default {
   flex-direction: column;
   border-radius: 2px;
   overflow: hidden;
+  text-align: center;
   box-shadow: 
     0 2px 2px 0 rgba(0,0,0,.14),
     0 3px 1px -2px rgba(0,0,0,.2), 
@@ -74,7 +87,7 @@ export default {
   padding: 14px 8px;
 }
 
-.more-details {
+.more-details:not(:empty) {
   padding: 5px;
   background-color: #35495e;
 }
