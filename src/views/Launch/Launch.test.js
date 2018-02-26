@@ -2,11 +2,11 @@ import View from './Launch'
 import { shallow, createLocalVue } from 'vue-test-utils'
 import Vuex from 'vuex'
 
+const localVue = createLocalVue()
+localVue.use(Vuex)
+
 describe('Views - Launch', function () {
   beforeEach(() => {
-    const localVue = createLocalVue()
-    localVue.use(Vuex)
-
     this.launch = {
       id: 1
     }
@@ -35,7 +35,7 @@ describe('Views - Launch', function () {
 
   describe('Computed properties', () => {
     describe('@launch', () => {
-      it("should return false when the launch's success is undefined", () => {
+      it('should return a launch information from the store regarding the flight number', () => {
         const cmp = this.buildComponent({
           flight: 1
         })

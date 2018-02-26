@@ -1,4 +1,4 @@
-import { buildLaunchModel } from '@/models/Launch/Launch'
+import { buildLaunchModel } from '@/models/launch/launch'
 
 describe('Launch Model', () => {
   describe('when an invalid launch payload is provided', () => {
