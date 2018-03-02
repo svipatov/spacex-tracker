@@ -1,4 +1,4 @@
-<template functional>
+<template>
   <nav>
     <router-link class="router-link link" v-for="item in items" :key="item.url" :to="item.url">
       {{item.label}}

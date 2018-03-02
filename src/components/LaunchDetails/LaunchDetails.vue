@@ -1,20 +1,22 @@
 <template>
-  <div>
-    <img v-if="launch.patch_logo" class="patch" :src="launch.patch_logo" :alt="launch.rocket.name" />
+  <div class="card">
+    <div class="launch">
+      <img v-if="launch.patch_logo" class="patch" :src="launch.patch_logo" :alt="launch.rocket.name" />
 
-    <h1 v-if="launch.rocket" class="name">{{launch.rocket.name}}</h1>
+      <h1 v-if="launch.rocket" class="name">{{launch.rocket.name}}</h1>
 
-    <div v-if="launch.year" class="row">
-      <label>Year:</label>
-      <span>{{ launch.year }}</span>
+      <div v-if="launch.year" class="row">
+        <label>Year:</label>
+        <span>{{ launch.year }}</span>
+      </div>
+
+      <div class="row">
+        <label>Launch site:</label>
+        <span>{{ siteName }}</span>
+      </div>
+
+      <div v-if="success">{{success}}</div>
     </div>
-
-    <div class="row">
-      <label>Launch site:</label>
-      <span>{{ siteName }}</span>
-    </div>
-
-    <div v-if="success">{{success}}</div>
   </div>
 </template>
 
@@ -51,6 +53,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.launch {
+  display: flex;
+
+  align-items: center;
+  flex-direction: column;
+}
 .patch {
   width: 100px;
 }
